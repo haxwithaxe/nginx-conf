@@ -1,0 +1,5 @@
+# send all requests for python scripts to fastcgi
+location ~* \.py$ {
+	include /etc/nginx/fastcgi_params;
+	fastcgi_pass unix:/var/run/fcgiwrap.socket;
+}
